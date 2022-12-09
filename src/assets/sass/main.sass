@@ -1,32 +1,35 @@
 @use 'utilities/_basic'
 @import 'components/_navbar'
-@import 'components/_cards.sass'
+@import 'components/_grid-cards.sass'
+@import 'components/_card.sass'
 @import 'components/_footer.sass'
-@import 'components/search-frame.sass'
-@import 'components/title.sass'
+@import 'components/_search-frame.sass'
+@import 'components/_title.sass'
+@import 'components/_logo.sass'
 @import '~sass-reset'
 
-
-body
+html
+   position: relative
+   min-height: 100%
+body   
    //Permite incluir la imagen de fondo con opacidad sin que esta sea heredada por los hijos añadiendo un fondo de color negro detrás de la imágen
-   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../../images/fondo.png") no-repeat center
+   background: var(--background_principal)
    -webkit-background-size: cover
    -moz-background-size: cover
    -o-background-size: cover
    background-size: cover
-   min-height: 100vh
-   
+   display: flex
+   flex-direction: column
+   margin-bottom: 23vh
 
 //Título del main y barra de búsqueda
 .mainFrame
-   
-   height: 85vh
    display: flex
    flex-direction: column
    align-items: center
    gap: 20px
-   overflow-y: scroll //permite usar barra de desplazamiento para el contenido sobrante en el eje y
-   
+   padding-bottom: 2vh
+  
       
          
 

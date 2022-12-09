@@ -1,4 +1,51 @@
 footer
-    background-color: basic.$oscuro_principal
-    height: 10vh
+    background-color: basic.$oscuro_principal        
+    color: basic.$acento_luminoso
+    //posiciono el footer al final de la pag en posición absoluta de manera que esté siempre al final de la 
+    //página o de la pantalla si el contenido es más pequeño
+    //para ello le doy al main un margin bottom del tamaño del footer
+    position: absolute
+    width: 100%
+    height: 23vh
+    bottom: 0
+    //se disponen los elementos en una columna de dos filas
+    display: flex
+    flex-direction: column
+    
+    .footer-main
+        display: flex
+        flex-direction: row
+        align-items: end
+        justify-content: space-between
+        padding: 1rem
+        border-block-end: 2px solid basic.$acento_luminoso   
+        @media(max-width: 750px) 
+            flex-direction: column
+            align-items: center
+        .social-media-links
+            h2
+                padding-bottom: 0.5rem
+            .redes
+                display: flex
+                flex-direction: row
+                gap: 0.5rem
+                img
+                    width: 35px
+        .condiciones_uso
+            font-size: 0.8rem
+            a
+                text-decoration: underline
+                font-weight: bold
+        .contacto
+            text-decoration: underline
+            font-weight: bold
+            padding-bottom: 2rem
+            padding-left: 2rem
+
+    .footer-secundary
+        text-align: end
+        font-size: 0.8rem
+        padding: 1rem
+        
+
    

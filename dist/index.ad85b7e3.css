@@ -1,4 +1,16 @@
 @import "https://fonts.googleapis.com/css2?family=Biryani:wght@300;400;700&family=Permanent+Marker&display=swap";
+.theme {
+  --color_color_letras: #f9f9f9;
+  --background_principal: linear-gradient(#000000d9, #000000d9), url("fondo.5f901549.png") no-repeat center;
+  --background_card: linear-gradient(#06070cf7, #08080ef7), url("fondo.5f901549.png") no-repeat center;
+}
+
+.theme--light {
+  --color_color_letras: #202433;
+  --background_principal: #f9f9f9;
+  --background_card: #f9f9f9;
+}
+
 .navbar {
   height: 5vh;
   background-color: #202433;
@@ -10,7 +22,7 @@
   display: flex;
 }
 
-.navbar a {
+.navbar .nav-bar-link {
   color: #bc799d;
   margin: 20px;
   text-decoration: none;
@@ -27,14 +39,10 @@
   margin: 20px;
 }
 
-.navbar .navbar_logo {
-  color: #bc799d;
-}
-
 .grid-content {
   width: 95%;
   height: 80%;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-content: center;
   justify-items: center;
   gap: 3vh;
@@ -47,11 +55,29 @@
   }
 }
 
-.grid-content .event {
-  color: #f9f9f9;
+.event {
+  color: var(--color_color_letras);
+  min-width: 300px;
+  font-weight: 500;
+  position: relative;
+  box-shadow: 0 3px 5px #ababc7;
 }
 
-.grid-content .event .image_div {
+.event .link-card {
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.event .link-card:after {
+  content: " ";
+  width: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.event .event-content .image_div {
   height: 50%;
   width: 100%;
   border-radius: 10px;
@@ -60,61 +86,148 @@
   overflow: hidden;
 }
 
-.grid-content .event .image_div img {
+.event .event-content .image_div .image {
   width: 100%;
   position: relative;
 }
 
-.grid-content .event .image_div a {
-  color: #ababc7;
+.event .event-content .image_div .fa-heart {
+  color: #f9f9f9;
   z-index: 100;
-  font-size: 1.3em;
+  font-size: 1.4em;
   position: absolute;
   top: 15px;
   right: 15px;
 }
 
-.grid-content .event .information_div {
-  height: 50%;
-  width: 100%;
-  text-align: start;
-  padding: 1vh;
+.event .event-content .image_div .fa-heart:hover {
+  font-size: 1.2em;
 }
 
-.grid-content .event .information_div p {
+.event .event-content .information_div {
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.event .event-content .information_div .information-box {
+  flex-direction: row;
+  justify-content: space-around;
+  display: flex;
+}
+
+.event .event-content .information_div p {
   margin: 0;
 }
 
-.grid-content .event .information_div h2 {
+.event .event-content .information_div .concert-name {
+  color: #bc799d;
   padding-bottom: 1rem;
-  font-weight: bold;
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+
+.event:hover {
+  background: var(--background_card);
+  box-shadow: 0 5px 8px #bc799d;
 }
 
 footer {
-  height: 10vh;
+  color: #f9f9f9;
+  width: 100%;
+  height: 23vh;
   background-color: #202433;
+  flex-direction: column;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+}
+
+footer .footer-main {
+  border-block-end: 2px solid #f9f9f9;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  padding: 1rem;
+  display: flex;
+}
+
+@media (max-width: 750px) {
+  footer .footer-main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+footer .footer-main .social-media-links h2 {
+  padding-bottom: .5rem;
+}
+
+footer .footer-main .social-media-links .redes {
+  flex-direction: row;
+  gap: .5rem;
+  display: flex;
+}
+
+footer .footer-main .social-media-links .redes img {
+  width: 35px;
+}
+
+footer .footer-main .condiciones_uso {
+  font-size: .8rem;
+}
+
+footer .footer-main .condiciones_uso a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+footer .footer-main .contacto {
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+footer .footer-secundary {
+  text-align: end;
+  padding: 1rem;
+  font-size: .8rem;
 }
 
 .searchFrame {
-  color: #f9f9f9;
+  color: var(--color_color_letras);
+  height: 20vh;
   flex-direction: column;
   padding: 0 6vw;
   display: flex;
 }
 
 .searchFrame .search_div {
-  color: #f9f9f9;
-  width: 70vw;
-  border-block-end: 1px solid #f9f9f9;
+  border-block-end: 1px solid var(--color_color_letras);
   flex-direction: row;
   justify-content: space-between;
   gap: 5vh;
   margin-top: 2vw;
+  margin-bottom: 1vw;
   display: flex;
 }
 
+.searchFrame .search_div .fa-magnifying-glass {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.searchFrame .search_div .search_input {
+  width: 70vw;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-size: 1.5rem;
+}
+
 .searchFrame .calendar {
-  color: #f9f9f9;
+  color: var(--color_color_letras);
   align-items: left;
 }
 
@@ -127,13 +240,24 @@ h1 {
   text-align: center;
   margin-top: 3vw;
   font-family: Permanent Marker, cursive;
-  font-size: 7vw;
+  font-size: 5.5vw;
 }
 
 @media (max-width: 550px) {
   h1 {
-    font-size: 10vw;
+    font-size: 9vw;
   }
+}
+
+.logo {
+  color: #bc799d;
+  flex-direction: row;
+  text-decoration: none;
+  display: flex;
+}
+
+.logo .logo-name, .logo .logo-img {
+  color: #bc799d;
 }
 
 * {
@@ -174,28 +298,28 @@ ul {
   list-style: none;
 }
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body {
+  background: var(--background_principal);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  min-height: 100vh;
-  background-color: #0000;
-  background-image: linear-gradient(#000000d9, #000000d9), url("fondo.0d6d5d8b.png");
-  background-position: 0 0, center;
-  background-repeat: repeat, no-repeat;
   background-size: cover;
-  background-attachment: scroll, scroll;
-  background-origin: padding-box, padding-box;
-  background-clip: border-box, border-box;
+  flex-direction: column;
+  margin-bottom: 23vh;
+  display: flex;
 }
 
 .mainFrame {
-  height: 85vh;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  padding-bottom: 2vh;
   display: flex;
-  overflow-y: scroll;
 }
 
 ::-webkit-scrollbar {

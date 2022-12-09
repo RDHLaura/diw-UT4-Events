@@ -1,0 +1,67 @@
+.event   
+    color: var(--color_color_letras)
+    font-weight: 500
+    position: relative
+    min-width: 300px
+    box-shadow: 0 3px 5px 0 basic.$luminoso_principal
+    .link-card //posiciona el link encima del contenido de la tarjeta
+        display: block
+        z-index: 1
+        text-align: center
+        width: 100%
+    .link-card::after //creo un pseudoelemento que se posiciona encima del padre creando así que la tarjeta del concierto sea un link
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        content: ' '
+        width: 100%
+    .event-content 
+        
+        .image_div
+            position: relative 
+            display: block 
+            height: 50%  
+            width: 100%
+            overflow: hidden
+            border-radius: 10px 
+            .image
+                width: 100%
+                position: relative    
+            .fa-heart
+                position: absolute 
+                right: 15px
+                top: 15px
+                font-size: 1.4em                    
+                color: basic.$acento_luminoso            
+                z-index: 100 //damos un valor alto en el eje z para que el icono se posicione encima de todo
+            .fa-heart:hover
+                font-size: 1.2em
+
+        .information_div
+            
+            height: 50%  
+            width: 100%
+            text-align: center
+            padding-bottom: 1rem
+           
+            .information-box
+                display: flex
+                flex-direction: row
+                justify-content: space-around
+                
+            
+            p
+                margin: 0   
+            .concert-name
+                color: basic.$principal
+                font-weight: bolder 
+                font-size: 1.3rem               
+                padding-bottom: 1rem  
+    
+.event:hover
+    box-shadow: 0 5px 8px 0 basic.$principal
+    background: var(--background_card)
+    
+        
