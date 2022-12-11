@@ -512,7 +512,7 @@ footer .footer-secundary {
 }
 
 .link-registro:hover {
-  text-shadow: 0 0px 1px 0 var(--color_letras);
+  text-shadow: 0 0px 1px var(--color_letras);
   text-decoration: overline var(--color_letras);
   color: var(--color_letras);
   transition: all .5s linear;
