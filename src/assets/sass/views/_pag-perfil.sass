@@ -1,0 +1,35 @@
+.title-h2
+    color: basic.$principal
+    font-weight: bold
+    padding-bottom: 0
+    margin-top: 7vh
+    text-align: center
+    
+.perfil-img
+    width: 20rem
+    border-radius: 50%
+.form-perfil-update
+    width: 100%
+    text-align: center
+.columns
+    width: 100%
+    display: flex
+    flex-direction: row
+    @media(max-width: 700px)
+        flex-direction: column
+        align-items: center
+    color: var(--color_letras)
+    justify-content: center
+    gap: 2vw
+    margin-bottom: 2vh
+    .column
+        width: 35%
+        text-align: start
+        @media(max-width: 700px)
+            width: 85%
+        legend
+            font-weight: bold
+            font-size: 1.1rem
+        .form-input
+            color: basic.$luminoso_principal
+            font-size: 1rem

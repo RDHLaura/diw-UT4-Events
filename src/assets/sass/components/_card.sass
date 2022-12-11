@@ -1,10 +1,12 @@
-.event   
-    color: var(--color_color_letras)
+.event //clase principal de la carta evento afecta a todo el article
+    color: var(--color_letras)
+    font-size: 1rem  
     font-weight: 500
     position: relative
     min-width: 300px
     box-shadow: 0 3px 5px 0 basic.$luminoso_principal
-    .link-card //posiciona el link encima del contenido de la tarjeta
+    background: var(--background_card)
+    .link-card //posiciona una etiqueta a encima del contenido de la tarjeta
         display: block
         z-index: 1
         text-align: center
@@ -17,8 +19,7 @@
         bottom: 0
         content: ' '
         width: 100%
-    .event-content 
-        
+    .event-content //         
         .image_div
             position: relative 
             display: block 
@@ -33,35 +34,41 @@
                 position: absolute 
                 right: 15px
                 top: 15px
-                font-size: 1.4em                    
-                color: basic.$acento_luminoso            
+                font-size: 1.3rem                    
+                color: basic.$acento_luminoso
+                opacity: 0.4         
                 z-index: 100 //damos un valor alto en el eje z para que el icono se posicione encima de todo
             .fa-heart:hover
                 font-size: 1.2em
+                transition: all 0.3s linear
+            .fa-heart-active
+                color: basic.$acento_luminoso
+                opacity: 1 
+                font-size: 1.6rem
+            .fa-heart-active:hover
+                font-size: 1.4rem
+                transition: all 0.3s linear
 
-        .information_div
-            
+        .information-box
+            display: flex
+            flex-direction: row
+            justify-content: space-around
             height: 50%  
             width: 100%
-            text-align: center
+            text-align: center            
             padding-bottom: 1rem
-           
-            .information-box
-                display: flex
-                flex-direction: row
-                justify-content: space-around
-                
-            
+            word-break: break-all //hace que el texto que no quepa en el contenedor pase a la siguiente línea
+            border-style: none
             p
                 margin: 0   
-            .concert-name
-                color: basic.$principal
-                font-weight: bolder 
-                font-size: 1.3rem               
-                padding-bottom: 1rem  
+        .concert-name
+            color: var(--color_titulo)
+            font-weight: bolder
+            font-size: 1.3rem            
+            padding-bottom: 1rem  
     
 .event:hover
     box-shadow: 0 5px 8px 0 basic.$principal
-    background: var(--background_card)
     
-        
+
+

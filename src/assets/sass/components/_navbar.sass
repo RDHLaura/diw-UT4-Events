@@ -1,23 +1,30 @@
-.navbar
-   height: 5vh
+.navbar 
+   height: 9vh 
    display: flex
    align-items: center
    justify-content: space-between
    flex-direction: row
    background-color: basic.$oscuro_principal
-   font-size: 20px
+   font-size: 1rem
    font-weight: bold 
-   .nav-bar-link
+   .list_navbar  //lista de links <ul> 
+      align-items: space-between  
+      list-style: none
       color: basic.$principal
-      text-decoration: none
-      margin: 20px  
-   .list_navbar       
-      ul
-         display: flex  
-         align-items: space-between  
-         list-style: none
-      li
-         margin: 20px
+      .nav-bar-link //da estilo a los links de la navbar         
+         text-decoration: none
+         float: left
+         margin: 20px 
+         padding-top: 1rem
          width: max-content //evita que se pierda palabras si un enlace tiene más de una ('sobre mí')
-         
-   
+         .nav-bar-link.active
+            background-color: #04AA6D
+            color: white
+         .nav-img
+            width: 3rem            
+      .nav-bar-link:hover
+         text-shadow: 0 0px 2px 0 basic.$luminoso_principal
+         text-decoration:  overline basic.$luminoso_principal
+         color: basic.$luminoso_principal        
+         transition: all 0.5s linear
+

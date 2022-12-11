@@ -1,27 +1,29 @@
+//barra de búsqueda de la pagina de listado de eventos
+
 .searchFrame    
     display: flex
     flex-direction: column  
     padding: 0 6vw
-    color: var(--color_color_letras)
+    color: var(--color_letras)
     height: 20vh
-    .search_div    
+    .search_div //posiciono en fila para agrupar el input con la lupa que hará la función de botón de búsqueda
         margin-top: 2vw 
         margin-bottom: 1vw      
         display: flex
         flex-direction: row    
         justify-content: space-between  
-        border-block-end: 1px solid var(--color_color_letras)
+        border-block-end: 1px solid var(--color_letras)
         gap: 5vh 
         .fa-magnifying-glass //da estilo a la lupa de la barra de búsqueda
             font-size: 1.5rem
             margin-right: 10px
-        .search_input 
+        .search_input //da estilo al input de la barra de búsqueda
             width: 70vw  
             padding-left: 10px  
             padding-bottom: 10px  
             font-size: 1.5rem   
-    .calendar
-        color: var(--color_color_letras)
+    .calendar //establece el estilo del link al calendario
+        color: var(--color_letras)
         align-items: left
-        p
-            color: gray
+        font-size: 2rem
+    
