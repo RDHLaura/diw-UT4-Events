@@ -9,7 +9,7 @@
     <script defer src="./assets/js/scripts.js"></script>
     <title>Mi proyecto</title>
 </head>
-<body class="theme theme--ligh"> <!--Añadir la clase .theme--dark para activar modo oscuro-->
+<body class="theme"  onload="checkMode()"> <!--Añadir la clase .theme--dark para activar modo oscuro-->
     <header class="navbar">
         <a class="logo" href="./index.html">
             <img class="logo-img" src="./assets/images/logo.svg" alt="Logo">
@@ -18,6 +18,8 @@
         <button class="button-burguer" onclick="desplegar_menu()"><i class="fa-solid fa-bars"></i></button>
         <nav class="nav" id="nav">
             <ul class="list_navbar">
+                <li class="nav-bar-link"><a href="./pagina404.html">404</a></li>
+                <li class="nav-bar-link"><a onclick="claro_oscuro()"><img src="./assets/images/day-and-night (1).png"></a></li>
                 <li class="nav-bar-link"><a href="./favoritos.html">Favoritos</a></li>
                 <li class="nav-bar-link"><a href="./inicio_sesion.html">Iniciar Sesión</a></li>
                 <li class="nav-bar-link"><a href="./perfil.html"><img class="perfil-img nav-img" src="./assets/images/foto_03evento.png" alt="Foto de perfil de usuario"></a></li>
@@ -25,15 +27,15 @@
         </nav>         
     </header>    
     <main class="mainFrame">  
-        <header>
+        <header class="header">
             <h1 class="title">Encuentra tu evento</h1> 
-            <section class="searchFrame">                                
+            <form class="searchFrame">                                
                 <div class="search_div">
                     <input type="text" class="search_input" placeholder="Localidad, artista, evento o fecha.">
-                    <a class="fa-solid fa-magnifying-glass"></a>
-                </div>                
-                <a href="" class="fa-regular fa-calendar calendar"></a>            
-            </section> 
+                    <a type="submit" class="fa-solid fa-magnifying-glass"></a>
+                </div>  
+                <input class="calendar" type="date" min="2022-12-01" max="2025-06-03" value="2022-12-01">
+            </form> 
         </header>   
         <section class="grid-content">
             <article class="event">   
@@ -205,51 +207,30 @@
                 </div>   
                 <a href="./evento.html" class="link-card"></a>
             </article>
-            <article class="event">   
-                <div class="event-content">            
-                    <div class="image_div">
-                        <img class="image" src="./assets/images/foto_07evento.png" alt="Imagen del concierto">
-                        <a id="fav" class="fa-solid fa-heart" onclick="fav()"></a>
-                    </div>
-                    <fieldset class="information-box">
-                        <legend class="concert-name ">Nombre concierto</legend>
-                            <div class="direction">
-                                <p class="direction-city">En Granada</p>
-                                <p class="direction-street">c/Falsa 123</p>
-                            </div>
-                            <div class="date">
-                                <p class="date-day">10</p>
-                                <p class="date-month">Dic</p>
-                                <p class="date-year">2022</p>
-                            </div>    
-                    </fieldset> 
-                </div>   
-                <a href="./evento.html" class="link-card"></a>
-            </article>
+            
             
         </section>
     </main>
 
-   
     <footer class="box-footer">
         <a class="logo" href="./index.html">
             <img class="logo-img" src="./assets/images/logo.svg" alt="Logo">
             <p class="logo-name">Events</p>
         </a>        
         <nav class="footer-main">
-            <div class="social-media-links">
-                <p class="p-redes">Síguenos</p>
+            <fieldset class="social-media-links">
+                <legend class="fieldset legend-redes">Síguenos</legend>
                 <ul class="redes" name="redes">
                     <li><a class="social-media-link" href="#"><img class="logo-instagram" src="./assets/images/instagram.svg" alt="Logo"></a> </li>
                     <li><a class="social-media-link" href="#"><img class="logo-twitter" src="./assets/images/twitter.svg" alt="Logo"></a></li>
                     <li><a class="social-media-link" href="#"><img class="logo-facebook" src="./assets/images/facebook.svg" alt="Logo"></a></li>
                     <li><a class="social-media-link" href="#"><img class="logo-youtube" src="./assets/images/youtube.svg" alt="Logo"></a>   </li>                 
                 </ul>
-            </div>            
-            <p class="condiciones_uso">Al continuar en nuestra página aceptas nuestras <a class="link"href="">Condiciones de uso</a></p>
-            <a class="link" href="./contacto.html">Contacto</a>
+            </fieldset>            
+            <p class="condiciones_uso">Al continuar en nuestra página aceptas nuestras <a class="link link-footer"href="">Condiciones de uso</a></p>
+            <a class="link link-footer" href="./contacto.html">Contacto</a>
         </nav>
         <p class="copy-right footer-secundary"> 2022. Events. Todos los derechos reservados</p>
-    </footer>   
+    </footer>    
 </body>
 </html>

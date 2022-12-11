@@ -1,5 +1,5 @@
 .title-h2
-    color: basic.$principal
+    color: var(--color_titulo)
     font-weight: bold
     padding-bottom: 0
     margin-top: 7vh
@@ -7,6 +7,8 @@
     
 .perfil-img
     width: 20rem
+    @media(max-width: 500px)
+        width: 90%
     border-radius: 50%
 .form-perfil-update
     width: 100%
@@ -16,6 +18,7 @@
     display: flex
     flex-direction: row
     @media(max-width: 700px)
+        transition: all 0.3s linear
         flex-direction: column
         align-items: center
     color: var(--color_letras)
@@ -25,11 +28,16 @@
     .column
         width: 35%
         text-align: start
+        margin: 2rem 0
         @media(max-width: 700px)
+            transition: all 0.3s linear
             width: 85%
-        legend
-            font-weight: bold
-            font-size: 1.1rem
-        .form-input
-            color: basic.$luminoso_principal
-            font-size: 1rem
+        .fieldset
+            margin: 1rem 0
+            legend
+                padding: 0
+                margin: 0
+                font-weight: bolder
+                font-size: 1.1rem
+            
+       

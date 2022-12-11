@@ -9,7 +9,7 @@
     <script defer src="./assets/js/scripts.js"></script>
     <title>Mi proyecto</title>
 </head>
-<body class="theme theme--ligh"> <!--Añadir la clase .theme--dark para activar modo oscuro-->
+<body class="theme"> <!--Añadir la clase .theme--dark para activar modo oscuro-->
     <header class="navbar">
         <a class="logo" href="./index.html">
             <img class="logo-img" src="./assets/images/logo.svg" alt="Logo">
@@ -18,6 +18,7 @@
         <button class="button-burguer" onclick="desplegar_menu()"><i class="fa-solid fa-bars"></i></button>
         <nav class="nav" id="nav">
             <ul class="list_navbar">
+                <li class="nav-bar-link"><a onclick="claro_oscuro()"><img src="./assets/images/day-and-night (1).png"></a></li>
                 <li class="nav-bar-link"><a href="./favoritos.html">Favoritos</a></li>
                 <li class="nav-bar-link"><a href="./inicio_sesion.html">Iniciar Sesión</a></li>
                 <li class="nav-bar-link"><a href="./perfil.html"><img class="perfil-img nav-img" src="./assets/images/foto_03evento.png" alt="Foto de perfil de usuario"></a></li>
@@ -50,8 +51,8 @@
                     <li><a class="social-media-link" href="#"><img class="logo-youtube" src="./assets/images/youtube.svg" alt="Logo"></a>   </li>                 
                 </ul>
             </fieldset>            
-            <p class="condiciones_uso">Al continuar en nuestra página aceptas nuestras <a class="link"href="">Condiciones de uso</a></p>
-            <a class="link" href="./contacto.html">Contacto</a>
+            <p class="condiciones_uso">Al continuar en nuestra página aceptas nuestras <a class="link link-footer"href="">Condiciones de uso</a></p>
+            <a class="link link-footer" href="./contacto.html">Contacto</a>
         </nav>
         <p class="copy-right footer-secundary"> 2022. Events. Todos los derechos reservados</p>
     </footer>  

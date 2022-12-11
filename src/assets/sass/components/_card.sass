@@ -6,19 +6,20 @@
     min-width: 300px
     box-shadow: 0 3px 5px 0 basic.$luminoso_principal
     background: var(--background_card)
+    border-radius: 10px
     .link-card //posiciona una etiqueta a encima del contenido de la tarjeta
         display: block
         z-index: 1
         text-align: center
         width: 100%
-    .link-card::after //creo un pseudoelemento que se posiciona encima del padre creando así que la tarjeta del concierto sea un link
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        content: ' '
-        width: 100%
+        &::after //creo un pseudoelemento que se posiciona encima del padre creando así que la tarjeta del concierto sea un link
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            content: ' '
+            width: 100%
     .event-content //         
         .image_div
             position: relative 
@@ -37,17 +38,17 @@
                 font-size: 1.3rem                    
                 color: basic.$acento_luminoso
                 opacity: 0.4         
-                z-index: 100 //damos un valor alto en el eje z para que el icono se posicione encima de todo
-            .fa-heart:hover
-                font-size: 1.2em
-                transition: all 0.3s linear
+                z-index: 2 //damos un valor alto en el eje z para que el icono se posicione encima de todo
+                &:hover
+                    font-size: 1.2em
+                    transition: all 0.3s linear
             .fa-heart-active
                 color: basic.$acento_luminoso
                 opacity: 1 
                 font-size: 1.6rem
-            .fa-heart-active:hover
-                font-size: 1.4rem
-                transition: all 0.3s linear
+                &:hover
+                    font-size: 1.4rem
+                    transition: all 0.3s linear
 
         .information-box
             display: flex
@@ -67,8 +68,8 @@
             font-size: 1.3rem            
             padding-bottom: 1rem  
     
-.event:hover
-    box-shadow: 0 5px 8px 0 basic.$principal
+    &:hover
+        box-shadow: 0 5px 8px 0 var(--color_titulo)
     
 
 

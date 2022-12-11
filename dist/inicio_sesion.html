@@ -9,7 +9,7 @@
     <script defer="" src="/index.c72c637a.js"></script>
     <title>Mi proyecto</title>
 </head>
-<body class="theme theme--ligh"> <!--Añadir la clase .theme--dark para activar modo oscuro-->
+<body class="theme"> <!--Añadir la clase .theme--dark para activar modo oscuro-->
     <header class="navbar">
         <a class="logo" href="/index.html">
             <img class="logo-img" src="/logo.5b34b4d1.svg" alt="Logo">
@@ -18,6 +18,7 @@
         <button class="button-burguer" onclick="desplegar_menu()"><i class="fa-solid fa-bars"></i></button>
         <nav class="nav" id="nav">
             <ul class="list_navbar">
+                <li class="nav-bar-link"><a onclick="claro_oscuro()"><img src="/day-and-night%20(1).5255677b.png"></a></li>
                 <li class="nav-bar-link"><a href="/favoritos.html">Favoritos</a></li>
                 <li class="nav-bar-link"><a href="/inicio_sesion.html">Iniciar Sesión</a></li>
                 <li class="nav-bar-link"><a href="/perfil.html"><img class="perfil-img nav-img" src="/foto_03evento.3c1084ce.png" alt="Foto de perfil de usuario"></a></li>
@@ -26,7 +27,7 @@
     </header>    
     <main class="mainFrame">  
         <h1 class="title">Inicio sesión</h1>    
-        <form action="" class="form">
+        <form action="" class="form form-sesion">
             <input type="text" class="form-input" placeholder="Email">
             <input type="text" class="form-input" placeholder="Contraseña.">
             <a class="form-button" href="/perfil.html">Entrar</a>
@@ -41,18 +42,18 @@
         </a>        
         <nav class="footer-main">
             <fieldset class="social-media-links">
-                <legend class="legend-redes">Síguenos</legend>
+                <legend class="fieldset legend-redes">Síguenos</legend>
                 <ul class="redes" name="redes">
-                    <li><a class="social-media-link " href="#"><img class="logo-instagram" src="/instagram.a4fa9dbb.svg" alt="Logo"></a> </li>
+                    <li><a class="social-media-link" href="#"><img class="logo-instagram" src="/instagram.a4fa9dbb.svg" alt="Logo"></a> </li>
                     <li><a class="social-media-link" href="#"><img class="logo-twitter" src="/twitter.723fb45e.svg" alt="Logo"></a></li>
                     <li><a class="social-media-link" href="#"><img class="logo-facebook" src="/facebook.e5e7865f.svg" alt="Logo"></a></li>
                     <li><a class="social-media-link" href="#"><img class="logo-youtube" src="/youtube.21e6491f.svg" alt="Logo"></a>   </li>                 
                 </ul>
             </fieldset>            
-            <p class="condiciones_uso">Al continuar en nuestra página aceptas nuestras <a class="link" href="">Condiciones de uso</a></p>
-            <a class="link" href="/contacto.html">Contacto</a>
+            <p class="condiciones_uso">Al continuar en nuestra página aceptas nuestras <a class="link link-footer" href="">Condiciones de uso</a></p>
+            <a class="link link-footer" href="/contacto.html">Contacto</a>
         </nav>
         <p class="copy-right footer-secundary"> 2022. Events. Todos los derechos reservados</p>
-    </footer>   
+    </footer>    
 <script src="/inicio_sesion.20bc7c9e.js"></script></body>
 </html>

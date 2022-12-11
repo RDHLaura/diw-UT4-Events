@@ -3,13 +3,14 @@
     height: 9vh 
     background-color: basic.$oscuro_principal
     display: flex
-    margin-top: 0
     flex-flow: row wrap //permite que los elementos aparezcan en varias líneas, lo que nos va a servir para mostrar el menú desplegable
-    justify-content: space-between //alinea horizontalmente
+    justify-content: space-between //alinea horizontalmente el logo y la nav con los links
     align-items: center //verticalmente
     font-size: 1rem
     font-weight: bold 
-    position: relative
+    position: sticky //le damos el valor de sticky que hará que la nav bar se quede fija arriba de la pag
+    top: 0 //para que sticky funcione debemos ponerle la posición absoluta en la qu estará
+    z-index: 10 //posicionamos la navbar encima de cualquier elemento que haya en la ventana
     .button-burguer
         color: basic.$principal
         font-size: 1.5rem
@@ -17,21 +18,20 @@
         height: 2em
         display: none //por defecto no se mostrará
         cursor: pointer
-        @media ( max-width: 500px )
-            display: block //se coloca verticalmente a continuación del elemento anterior, nos servirá para el menú desplegable
+        @media ( max-width: 700px )
+            display: block //hace que el botón aparezca
     .nav 
-        position: absolute
-        z-index: 1000
-        @media(max-width: 500px)
-            left: -100vw
-            top: 9vh
+        @media(max-width: 700px)
+            position: absolute
+            top: -1000vw //ocultamos la nav con los links de la navegación de forma que sólo se mostrará cuándo tenga la clase 'activo'
             width: 100%
-           
-    .activo
+            transition: all 0.5s ease //creamos una transición para la aparición del menú desplegable
+            padding: 5vh 0
+
+    .activo //se añade a la lista de navegación cuando se pulsa sobre el botón de hamburguesa
         background-color: basic.$oscuro_principal
-        @media(max-width: 500px)
-            top: 9vh
-            left: 0vw
+        @media(max-width: 700px)
+            top: 9vh //hacemos visible el menú desplegable
             
     .list_navbar
         display: flex
@@ -39,20 +39,24 @@
         justify-content: flex-end
         align-items: center
         color: basic.$principal
-        @media ( max-width: 500px )
-            flex-direction: column-reverse //dentro del menú desplegable los colocamos en columna
+        @media ( max-width: 700px )
+            flex-direction: column-reverse //dentro del menú desplegable los colocamos en columna y en orden descendente para que muyestre el icono de perfil primero
             
         .nav-img
-            width: 3rem 
-
+            width: 3.5rem 
+            @media ( max-width: 700px )
+                width: 5rem 
+            &:hover //crea un efecto de sombreado luminoso en la imagen cuando posicionamos el ratón encima
+                box-shadow: 0 2px 4px 0 basic.$luminoso_principal
+                transition: all 0.5s linear
         .nav-bar-link
             margin: 0em 1em        
-            @media(max-width: 500px)
+            @media(max-width: 700px)
                 padding: 1rem 0
 
-        .nav-bar-link:hover
-            text-shadow: 0 0px 1px 0 basic.$luminoso_principal
-            text-decoration:  overline basic.$luminoso_principal
-            color: basic.$luminoso_principal        
-            transition: all 0.5s linear
+            &:hover //crea un efecto sobre los links cuando posicionamos el ratón encima
+                text-shadow: 0 0px 1px 0 basic.$luminoso_principal
+                text-decoration:  overline basic.$luminoso_principal
+                color: basic.$luminoso_principal        
+                transition: all 0.5s linear
     
