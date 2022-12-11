@@ -888,9 +888,6 @@ html {
 
 body {
   background: var(--background_principal);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   flex-direction: column;
   margin-bottom: 35vh;
